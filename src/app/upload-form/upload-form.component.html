@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+        <h2>Drop File</h2>
+        <div class="dropzone text-center" appFileDropDirective (filesDropped)="handleDrop($event)"
+          (fileHovered)="dropzoneState($event)" [ngClass]="{'fileDraged': dropzoneActive}">
+          <i [ngClass]="{'fileDraged': dropzoneActive}" class="fa fa-cloud-upload fa-2x"></i>
+        </div>
+        <br>
+        <div class="text-center" *ngIf="currentUpload">
+          <progress class="progress is-success" min=1 max=100 value="{{currentUpload?.progress}}">
+            Progress: {{currentUpload?.name }} | {{currentUpload?.progress}} % Complete
+          </progress>
+        </div>
+      </div>
+      <div *ngIf="currentUpload">
+        <img [ngStyle]="{ 'display':currentUpload.url ? 'initial': 'none'}" style="height: 500px; width: 500px;"
+          [src]="currentUpload.url">
+      </div>
+    </div>
+  </div>
+</div>

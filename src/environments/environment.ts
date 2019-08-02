@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDqeLoqnDjYOshT1IbChO8KpkHQkR4sJWM',
+    authDomain: 'uploaddragdrop.firebaseapp.com',
+    databaseURL: 'https://uploaddragdrop.firebaseio.com',
+    projectId: 'uploaddragdrop',
+    storageBucket: 'gs://uploaddragdrop.appspot.com',
+    messagingSenderId: '425337872230'
+  }
 };
 
 /*
